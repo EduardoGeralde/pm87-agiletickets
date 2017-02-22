@@ -38,6 +38,7 @@ public class EstabelecimentosController {
 		return diretorio.todos();
 	}
 
+	
 	@Post("/estabelecimentos")
 	public void adiciona(final Estabelecimento estabelecimento) {
 		validator.addIf(Strings.isNullOrEmpty(estabelecimento.getNome()), new I18nMessage("estabelecimento.nome","nome.nulo"));
