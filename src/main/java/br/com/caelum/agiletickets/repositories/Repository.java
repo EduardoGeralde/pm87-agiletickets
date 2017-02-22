@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 public abstract class Repository<T, I extends Serializable> {
 	
+	
 	protected final EntityManager entityManager;
 	protected final Class<T> clazz;
 
