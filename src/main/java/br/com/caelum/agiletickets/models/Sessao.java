@@ -87,14 +87,9 @@ public class Sessao {
 	}
 
 	public Integer getIngressosDisponiveis() {
-		// faz a conta de total de ingressos menos ingressos reservados
 		return totalIngressos - ingressosReservados;
 	}
 	
-	// Era usada antes no sistema para avisar o cliente de que
-    // os ingressos estavam acabando!
-    // Hoje nao serve pra nada, mas eh sempre bom ter
-    // um backup guardado! ;)
     public boolean pertoDoLimiteDeSeguranca_NaoUtilizada()
     {
             int limite = 3;
@@ -102,7 +97,6 @@ public class Sessao {
     }
 
 	public void reserva(Integer numeroDeIngressos) {
-		// soma quantidade na variavel ingressos reservados
 		this.ingressosReservados += numeroDeIngressos;
 	}
 
