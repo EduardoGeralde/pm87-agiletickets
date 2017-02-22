@@ -16,6 +16,7 @@ public class JPAEstabelecimentoDao implements DiretorioDeEstabelecimentos {
 	protected JPAEstabelecimentoDao() {
 	}
 	
+	
 	@Inject
 	public JPAEstabelecimentoDao(EntityManager manager) {
 		this.manager = manager;
