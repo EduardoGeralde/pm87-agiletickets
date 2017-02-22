@@ -17,6 +17,7 @@ public class IndexController {
 	protected IndexController() {
 	}
 
+	
 	@Inject
 	public IndexController(Result result, Agenda agenda) {
 		this.result = result;
