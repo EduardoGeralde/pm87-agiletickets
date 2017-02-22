@@ -127,6 +127,7 @@ public class EspetaculosController {
 		result.redirectTo(IndexController.class).index();
 	}
 
+	
 	private Espetaculo carregaEspetaculo(Long espetaculoId) {
 		Espetaculo espetaculo = agenda.espetaculo(espetaculoId);
 		if (espetaculo == null) {
