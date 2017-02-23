@@ -56,7 +56,7 @@
 	<classpathentry kind="lib" path="lib/acceptance-test/xalan-2.7.1.jar"/>
 	<classpathentry kind="lib" path="lib/acceptance-test/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="lib/acceptance-test/xml-apis-1.4.01.jar"/>
-	<classpathentry kind="lib" path="lib/test/junit-4.8.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/test/junit-4.8.2.jar"/>
 	<classpathentry kind="lib" path="lib/test/mockito-all-1.8.5.jar"/>
 	<classpathentry kind="lib" path="lib/test/hamcrest-all-1.1.jar"/>
 	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
