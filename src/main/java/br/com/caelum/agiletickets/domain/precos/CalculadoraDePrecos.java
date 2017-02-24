@@ -8,9 +8,10 @@ import br.com.caelum.agiletickets.models.TipoDeEspetaculo;
 public class CalculadoraDePrecos {
 
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
+		
 		BigDecimal preco = sessao.getPreco();
-		double percentualDisponivel = (sessao.getTotalIngressos() - sessao.getIngressosReservados()) / sessao.getTotalIngressos().doubleValue();
 		TipoDeEspetaculo tipoEspetaculo = sessao.getEspetaculo().getTipo();
+		double percentualDisponivel = (sessao.getTotalIngressos() - sessao.getIngressosReservados()) / sessao.getTotalIngressos().doubleValue();
 		
 		if(tipoEspetaculo.equals(TipoDeEspetaculo.CINEMA) || tipoEspetaculo.equals(TipoDeEspetaculo.SHOW)) {
 			if(percentualDisponivel <= 0.05) { 
