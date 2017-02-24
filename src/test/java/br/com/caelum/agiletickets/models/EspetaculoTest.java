@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 import org.junit.Test;
@@ -98,6 +99,9 @@ public class EspetaculoTest {
 		List<Sessao> lista = ivete.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		
 		Assert.assertEquals(1, lista.size());
+		Sessao sessao = lista.get(0);
+		DateTime dataComHorario = inicio.toDateTime(horario);
+		Assert.assertEquals(dataComHorario, sessao.getInicio());
 		
 	}
 	
