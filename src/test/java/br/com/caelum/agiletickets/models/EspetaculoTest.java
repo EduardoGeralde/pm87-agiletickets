@@ -1,7 +1,6 @@
 package br.com.caelum.agiletickets.models;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -105,4 +104,13 @@ public class EspetaculoTest {
 		
 	}
 	
+	@Test
+	public void criar3SessoesDiarias() throws Exception {
+		Espetaculo iron = new Espetaculo();
+		LocalDate inicio = new LocalDate(2017,2,23);
+		LocalDate fim = new LocalDate(2017,2,25);
+		LocalTime horario = new LocalTime(9,0);
+		List<Sessao> lista = iron.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
+		Assert.assertEquals(3, lista.size());
+	}	
 }
