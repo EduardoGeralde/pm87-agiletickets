@@ -126,4 +126,23 @@ public class EspetaculoTest {
 		
 		Assert.assertEquals(3, lista.size());
 	}
+	
+	@Test
+	public void verificaDataSemanal() throws Exception {
+		
+		Espetaculo jogoPalmeiras = new Espetaculo();
+		LocalDate inicio = new LocalDate(2017,1,9);
+		LocalDate fim = new LocalDate(2017,1,23);
+		LocalTime horario = new LocalTime(17,0);
+		
+		List<Sessao> lista = jogoPalmeiras.criaSessoes(inicio, fim, horario, Periodicidade.SEMANAL);
+		
+		DateTime dataComHora = inicio.toDateTime(horario);
+		
+		for (Sessao sessao : lista) {
+			Assert.assertEquals(dataComHora, sessao.getInicio());
+			System.out.println(dataComHora);
+			dataComHora = dataComHora.plusDays(1);
+		}
+	}
 }
