@@ -111,9 +111,10 @@ public class Espetaculo {
 				sessao.setInicio(inicio.toDateTime(horario).plusDays(i));
 				sessoes.add(sessao);
 		} else {
-			for (int i = 0; i <= numeroSemana; i++) {
+			for (int i = 0; i <= numeroDias; i+=7) {
 				Sessao sessao = new Sessao();
-				sessao.setInicio(inicio.toDateTime(horario).plusDays(i));
+				sessao.setInicio(inicio.toDateTime(horario).plusDays(i + 7));
+				i = i-7;
 				sessoes.add(sessao);
 			}
 		}
