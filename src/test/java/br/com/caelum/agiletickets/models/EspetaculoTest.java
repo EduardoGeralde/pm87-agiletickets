@@ -113,4 +113,17 @@ public class EspetaculoTest {
 		List<Sessao> lista = iron.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		Assert.assertEquals(3, lista.size());
 	}	
+	
+	@Test
+	public void criaSessaoSemanal() throws Exception {
+		
+		Espetaculo jogoPalmeiras = new Espetaculo();
+		LocalDate inicio = new LocalDate(2017,1,9);
+		LocalDate fim = new LocalDate(2017,1,23);
+		LocalTime horario = new LocalTime(17,0);
+		
+		List<Sessao> lista = jogoPalmeiras.criaSessoes(inicio, fim, horario, Periodicidade.SEMANAL);
+		
+		Assert.assertEquals(3, lista.size());
+	}
 }

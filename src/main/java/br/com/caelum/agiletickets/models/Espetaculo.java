@@ -103,10 +103,19 @@ public class Espetaculo {
 		
 		List<Sessao> sessoes = new ArrayList<Sessao>();
 		int numeroDias = Days.daysBetween(inicio, fim).getDays();
-		for (int i = 0; i <= numeroDias; i++){
-			Sessao sessao = new Sessao();
-			sessao.setInicio(inicio.toDateTime(horario).plusDays(i));
-			sessoes.add(sessao);
+		int numeroSemana = numeroDias/7;
+		
+		if (periodicidade == Periodicidade.DIARIA )
+			for (int i = 0; i <= numeroDias; i++) {
+				Sessao sessao = new Sessao();
+				sessao.setInicio(inicio.toDateTime(horario).plusDays(i));
+				sessoes.add(sessao);
+		} else {
+			for (int i = 0; i <= numeroSemana; i++) {
+				Sessao sessao = new Sessao();
+				sessao.setInicio(inicio.toDateTime(horario).plusDays(i));
+				sessoes.add(sessao);
+			}
 		}
 		return sessoes;
 	}
